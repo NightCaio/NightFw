@@ -91,10 +91,11 @@ function setView(view, start, html){
   const htmlup = html.update
   var body = ''
   delete html.update
+
   Object.values(html).forEach((n)=>{
     body += n
   })
-  console.log('teste1: '+body)
+  
   add(body)
   setup()
   if(start != null)
