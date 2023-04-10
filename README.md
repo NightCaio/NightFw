@@ -39,14 +39,14 @@ const ball = new object('ball', 'b.png', 0, 0, 50, 50, 0)
 const ground = new object('g', 'g.png', 0, 0, 300, 50, 0)
 
 ball.addCircleBody()
-ground.addBoxBody()
+ground.addBoxStaticBody()
 
 ball.center(0, 0)
-ground.center(0, 500)
+ground.center(0, 300)
 
 function start(){
     document.onmousedown = function(){
-        ball.addForce(0, -0.06)
+        ball.addForce(0, -0.03)
     }
 }
 function update(){
