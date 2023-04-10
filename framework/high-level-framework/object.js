@@ -25,6 +25,10 @@ class object {
       
       this.style.width = this.width + "px"
       this.style.height = this.height + "px"
+
+      this.x = this.body.position.x
+      this.y = this.body.position.y
+      this.div = element(this.name+'-div')
     }
   
     addBoxBody(){
@@ -82,6 +86,27 @@ class object {
     
     addForce(x, y){
       Matter.Body.applyForce(this.body, this.body.position, {x: x, y: y})
+    }
+
+    setPosition(x, y){
+      x = x == null ? this.body.position.x : x
+      y = y == null ? this.body.position.y : y
+      Matter.Body.setPosition(this.body, {x: x, y: y})
+    }
+    
+    setX(x){
+      this.setPosition(x, null)
+    }
+    
+    setY(y){
+      this.setPosition(null, y)
+    }
+    
+    move(x, y){
+      this.setPosition(
+        this.body.position.x + x,
+        this.body.position.y + y
+      )
     }
     
 }
